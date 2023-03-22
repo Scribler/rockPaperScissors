@@ -1,0 +1,8 @@
+// Header
+@use '../abstracts/variables' as *;
+header {
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--light-grey);
+  color: var(--dark-blue);
+}

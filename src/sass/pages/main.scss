@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+@use '../components/buttons' as *;
+
+// buttons
+.buttone {
+  @include menu-buttons;
+  margin: 10px auto;
+  &:hover {
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
+  }
+  &:active {
+    color: var(--light-blue);
+    background-color: var(--darker-grey);
+  }
+}
+
+// Main Area
+main {
+  color: var(--black);
+  padding: 10px 0 ;
+  text-align: center;
+  border-top: 1px solid var(--black);
+}
+

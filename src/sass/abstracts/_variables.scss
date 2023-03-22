@@ -1,0 +1,24 @@
+:root {
+// COLORS
+  --off-white: hsla(0, 0%, 94%, 1); //main background color
+  --light-grey: hsl(0, 0%, 91%);
+  --grey: hsl(0, 0%, 95%); // main button hover color
+  --dark-grey: hsla(0, 0%, 70%, 1);
+  --darker-grey: hsla(0, 0%, 50%, 1);
+  --black: hsl(0, 0%, 12%);
+
+  // Flexbox Colors
+  --white: hsl(0, 0%, 100%);
+  --light-blue: hsl(210, 100%, 95%);
+  --dark-blue: hsl(214, 89%, 52%);
+  --flex-hero-main-text: #F9FAF8; // hero-heading
+  --flex-hero-secondary: #E5E7EB; // nav-button-hover-background
+  --flex-dark-background: #1F2937;// hero and footer
+
+  // FONT-SIZES
+  --hero-fs: 2em;
+  --h1-fs: 2.5em;
+  --h2-fs: 2.0em;
+  --h3-fs: 1.5em;
+  --h4-fs: 1.3em;
+}
