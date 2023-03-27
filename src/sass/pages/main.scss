@@ -14,8 +14,16 @@
     background-color: var(--darker-grey);
   }
 }
+button {
+  background-color: var(--wool-beige);
+  padding: 20px 40px;
+  border-radius: 30px;
+}
 
 // Main Area
+body {
+  background-color: var(--off-white);
+}
 main {
   color: var(--black);
   padding: 10px 0 ;
