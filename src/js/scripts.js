@@ -1,3 +1,7 @@
+const hand = document.getElementById('hand');
+const start = document.getElementById('startGame');
+start.addEventListener('click', game);
+
 // Rock Paper Scissors Game
 
 function getComputerChoice() { // Returns 'rock', 'paper', or 'scissors'.
@@ -20,6 +24,7 @@ function getComputerChoice() { // Returns 'rock', 'paper', or 'scissors'.
 }
 
 function game() {
+  hand.classList.toggle('moveHand');
   // DEFAULT display
   //    - Title
   //    - NUMBER DROPDOWN - How many Rounds would you like to play?
@@ -38,3 +43,4 @@ function game() {
 
 // Testing
 console.log(getComputerChoice());
+

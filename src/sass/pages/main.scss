@@ -51,6 +51,9 @@ main {
   width: calc(320px * var(--pixel-size));
   height: calc(64px * var(--pixel-size));
 }
+.moveHand {
+  animation: moveSpriteSheet 1s steps(5) infinite alternate;
+}
 
 @keyframes moveSpriteSheet {
   from {
