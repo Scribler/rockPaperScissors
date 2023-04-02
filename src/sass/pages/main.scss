@@ -1,9 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../components/buttons' as *;
 
-@mixin pixelart {
-  image-rendering: pixelated;
-}
 // buttons
 .button {
   &:hover {
@@ -36,31 +33,13 @@ main {
   width: 180px;
   height: 190px;
 }
-
-.hand {
-  display: inline-block;
-  width: calc(64px * var(--pixel-size));
-  height: calc(64px * var(--pixel-size));
-  // background-color: yellow;
-  overflow: hidden;
-  // margin: 20px auto;
-}
-.handsprites {
-  @include pixelart;
-  // UNCOMMENT BELOW TO START ANIMATION
-  // animation: moveSpriteSheet 1s steps(5) infinite alternate;
-  width: calc(320px * var(--pixel-size));
-  height: calc(64px * var(--pixel-size));
-}
-.moveHand {
-  animation: moveSpriteSheet 1s steps(5) infinite alternate;
-}
-
-@keyframes moveSpriteSheet {
-  from {
-    transform: translate3d(0px,0,0)
-  }
-  to {
-    transform: translate3d(-100%,0,0)
+ul {
+  color: hsl(0, 0%, 11%);
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 350px;
+  h3 {
+    margin-left: -30px;
+    text-decoration: underline;
   }
 }
