@@ -1,40 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../components/buttons' as *;
-
 @mixin pixelart {
   image-rendering: pixelated;
-}
-// buttons
-.button {
-  &:hover {
-    color: var(--dark-blue);
-    background-color: var(--light-blue);
-  }
-  &:active {
-    color: var(--light-blue);
-    background-color: var(--darker-grey);
-  }
-}
-button {
-  background-color: var(--wool-beige);
-  padding: 20px 40px;
-  border-radius: 30px;
-}
-
-// Main Area
-body {
-  background-color: var(--off-white);
-  color: var(--black);
-}
-main {
-  padding: 10px 0 ;
-  text-align: center;
-  border-top: 1px solid var(--black);
-}
-
-.feltAnimals {
-  width: 180px;
-  height: 190px;
 }
 
 .hand {

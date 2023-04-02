@@ -1,4 +1,5 @@
-const hand = document.getElementById('hand');
+const playerHand = document.getElementById('playerHand');
+const compHand = document.getElementById('compHand');
 const start = document.getElementById('startGame');
 start.addEventListener('click', game);
 
@@ -24,7 +25,8 @@ function getComputerChoice() { // Returns 'rock', 'paper', or 'scissors'.
 }
 
 function game() {
-  hand.classList.toggle('moveHand');
+  playerHand.classList.toggle('moveHand');
+  compHand.classList.toggle('moveHand');
   // DEFAULT display
   //    - Title
   //    - NUMBER DROPDOWN - How many Rounds would you like to play?
