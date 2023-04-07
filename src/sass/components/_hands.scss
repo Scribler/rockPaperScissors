@@ -18,7 +18,14 @@
   height: calc(64px * var(--pixel-size));
 }
 .moveHand {
-  animation: moveSpriteSheet 1s steps(5) infinite alternate;
+  // animation: moveSpriteSheet 1s steps(5) infinite alternate;
+  animation: moveSpriteSheet 3s steps(5) infinite;
+}
+.toRock {
+}
+.toPaper{
+}
+.toScissors {
 }
 
 @keyframes moveSpriteSheet {
@@ -29,3 +36,4 @@
     transform: translate3d(-100%,0,0)
   }
 }
+

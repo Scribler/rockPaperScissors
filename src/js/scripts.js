@@ -25,8 +25,14 @@ function getComputerChoice() { // Returns 'rock', 'paper', or 'scissors'.
 }
 
 function game() {
-  playerHand.classList.toggle('moveHand');
-  compHand.classList.toggle('moveHand');
+  playerHand.classList.toggle('moveHand'); // animate player hand
+  compHand.classList.toggle('moveHand'); // animate computer hand
+
+  // NEXT
+  // animate hand when hover over button. (transition animations.)
+  
+
+
   // DEFAULT display
   //    - Title
   //    - NUMBER DROPDOWN - How many Rounds would you like to play?
