@@ -51,31 +51,64 @@ function getPlayerWeapon () {
 }
 
 function getComputerWeapon () { // should randomly generate a weapon for the computer player
-  return "A rock, paper, or scissors";
+  let weapon = Math.ceil(Math.random() * 3);
+  
+  switch (weapon) {
+    case 1:
+      weapon = "rock";
+      break;
+    case 2:
+      weapon = "paper";
+      break;
+    case 3:
+      weapon = "scissors";
+      break;
+    default:
+      console.error("Something is borked. :P");
+      break;
+  };
+  return weapon;
 }
 
 function compareWeapons (playerWeapon, computerWeapon) { // should compare the weapons of computer and player and return 'player' or 'computer'.
-  // console.log(`playerWeapon: ${playerWeapon}, computerWeapon: ${computerWeapon}`);
-  return `playerWeapon: ${playerWeapon}, computerWeapon: ${computerWeapon}`;
+  if (playerWeapon == computerWeapon) {
+    return "It's a Tie!"
+  } else if ((playerWeapon == "rock" && computerWeapon == "scissors") || (playerWeapon == "paper" && computerWeapon == "rock") || (playerWeapon == "scissors" && computerWeapon == "paper")) {
+    return "player";
+  } else {
+    return "computer"
+  }
 };
 
 function runGame () { // main game script
   let playerScore = 0;
   let computerScore = 0;
   const rounds = getRounds(); // How many rounds does user want to play?
-  const playerWeapon = getPlayerWeapon();
-  const computerWeapon = getComputerWeapon();
-  const winner = compareWeapons(playerWeapon, computerWeapon);
-  
-
   console.log(`Number of rounds chosen: ${rounds}`);
+  for (let index = 0; index < rounds; index++) {
+    const playerWeapon = getPlayerWeapon();
+    const computerWeapon = getComputerWeapon();
+    const winner = compareWeapons(playerWeapon, computerWeapon);
+    if (winner == "It's a Tie!") {
+      console.log("It's a tie, no change to scores.");
+    } else if (winner == "player"){
+      playerScore++;
+    } else {
+      computerScore++;
+    };
   console.log(`Your weapon is: ${playerWeapon}`);
   console.log(`The Computer's weapon is: ${computerWeapon}`);
   console.log(`The winner is: ${winner}`);
   console.log(`Player Score: ${playerScore}`);
   console.log(`Computer Score: ${computerScore}`);
+  };
+  if (playerScore == computerScore) {
+    console.log("The game was a tie!");
+  } else if (playerScore > computerScore) {
+    console.log("Player won the game!");
+  } else {
+    console.log("Computer won the game!")
+  }
 };
-
-// UNCOMMENT THE BELOW LINE TO ACTIVATE GAME CODE
 
 confirm("Would you like to play a game of Rock Paper Scissors?") ? runGame() : console.log("Game Over"); // run game if user selects OK. else log "Game Over".
