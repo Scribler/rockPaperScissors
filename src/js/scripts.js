@@ -1,3 +1,12 @@
+// global variables;
+let playerScore = 0;
+let computerScore = 0;
+let totalWins = 0;
+let totalLosses = 0;
+let rounds = 1; // set default number of rounds to 1
+let playerWeapon;
+
+
 function getComputerWeapon () { // should randomly generate a weapon for the computer player
   let weapon = Math.ceil(Math.random() * 3);
   
@@ -35,18 +44,15 @@ function createWeapon (areaToAppendTo, weaponName) {
   weapon.classList.add('weaponButton');
   areaToAppendTo.appendChild(weapon);
   weapon.addEventListener('click', () => {
-    console.log(weapon.value);
+  playerWeapon = weapon.value;
+  console.log(playerWeapon);
+  // sets player's weapon type
+    // *************** But still needs to trigger comparison to computer weapon ****************
   });
 }
 
 
 function runGame () { // main game script
-  let playerScore = 0;
-  let computerScore = 0;
-  let totalWins = 0;
-  let totalLosses = 0;
-  let rounds = 1; // set default number of rounds to 1
-  
   const gameArea = document.querySelector('.gameArea'); // game area (everything is added to this)
   const callToAction = document.createElement('p');
   callToAction.textContent = "How many rounds would you like to play?";
@@ -70,9 +76,9 @@ function runGame () { // main game script
     gameArea.removeChild(playButton);
     gameArea.removeChild(selectNumberOfRounds);
     callToAction.textContent = "Choose Your Weapon!";
-    createWeapon(gameArea, 'rock');
-    createWeapon(gameArea, 'paper');
-    createWeapon(gameArea, 'scissors');
+    createWeapon(gameArea, 'rock'); // these still need work
+    createWeapon(gameArea, 'paper'); // these still need work
+    createWeapon(gameArea, 'scissors'); // these still need work
   });
   gameArea.appendChild(playButton);
 
