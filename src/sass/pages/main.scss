@@ -16,6 +16,8 @@ button {
   background-color: var(--wool-beige);
   padding: 20px 40px;
   border-radius: 30px;
+  display: block;
+  margin: 20px 40%;
 }
 
 // Main Area
@@ -36,4 +38,13 @@ main {
   min-height: 700px;
   min-width: 700px;
   margin: 10px 0;
+}
+
+.callToAction {
+  font-size: 30px;
+  margin: 30px;
+}
+
+.weaponButton {
+  display: inline-block;
 }

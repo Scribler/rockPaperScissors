@@ -1,55 +1,3 @@
-let totalWins = 0;
-let totalLosses = 0;
-
-function checkRounds (userInput) { // checks user's input is a number from 1 - 10
-  if (userInput > 10 || userInput < 1 || isNaN(userInput)) {
-    console.error("Invalid input, try again");
-    return userInput;
-  } else {
-    return userInput;
-  };
-};
-
-function getRounds () { // Get input from user on number of rounds they would like to play.
-  let rounds;
-  do {
-    rounds = checkRounds(prompt("How many rounds would you like to play?  Enter a number between [1 - 10]"));
-  } while (rounds < 1 || rounds > 10 || isNaN(rounds));
-  return rounds;
-};
-
-function checkPlayerWeapon (userInput) { // checks user's input is a number from 1 - 10
-  if (userInput > 10 || userInput < 1 || isNaN(userInput)) {
-    console.error("Invalid input, try again");
-    return userInput;
-  } else {
-    return userInput;
-  };
-};
-
-function getPlayerWeapon () {
-  let weapon;
-  do {
-    weapon = parseInt(checkPlayerWeapon(prompt("Choose Your Weapon! Enter (1) for rock, (2) for Paper, and (3) for Scissors.")));
-  } while (weapon < 1 || weapon > 3 || isNaN(weapon));
-  
-  switch (weapon) {
-    case 1:
-      weapon = "rock";
-      break;
-    case 2:
-      weapon = "paper";
-      break;
-    case 3:
-      weapon = "scissors";
-      break;
-    default:
-      console.error("Something is borked. :P");
-      break;
-  }
-  return weapon;
-}
-
 function getComputerWeapon () { // should randomly generate a weapon for the computer player
   let weapon = Math.ceil(Math.random() * 3);
   
@@ -80,10 +28,56 @@ function compareWeapons (playerWeapon, computerWeapon) { // should compare the w
   }
 };
 
+function createWeapon (areaToAppendTo, weaponName) {
+  const weapon = document.createElement('button');
+  weapon.textContent = `${weaponName}`;
+  weapon.value = `${weaponName}`;
+  weapon.classList.add('weaponButton');
+  areaToAppendTo.appendChild(weapon);
+  weapon.addEventListener('click', () => {
+    console.log(weapon.value);
+  });
+}
+
+
 function runGame () { // main game script
   let playerScore = 0;
   let computerScore = 0;
-  const rounds = getRounds(); // How many rounds does user want to play?
+  let totalWins = 0;
+  let totalLosses = 0;
+  let rounds = 1; // set default number of rounds to 1
+  
+  const gameArea = document.querySelector('.gameArea'); // game area (everything is added to this)
+  const callToAction = document.createElement('p');
+  callToAction.textContent = "How many rounds would you like to play?";
+  callToAction.classList.add('callToAction');
+  gameArea.appendChild(callToAction);
+
+  const selectNumberOfRounds = document.createElement('select'); // create dropdown list with options from 1 - 10
+  for (let index = 1; index < 11; index++) { 
+    const roundNum = document.createElement('option');
+    roundNum.value = `${index}`;
+    roundNum.textContent = `${index}`;
+    selectNumberOfRounds.appendChild(roundNum);
+  11}
+  gameArea.appendChild(selectNumberOfRounds);
+
+  const playButton = document.createElement('button'); // play button -> gets # of rounds, clears area, and initializes game
+  playButton.textContent = "Play Game";
+  playButton.addEventListener('click', () => {
+    rounds = selectNumberOfRounds.value;
+    console.log(rounds);
+    gameArea.removeChild(playButton);
+    gameArea.removeChild(selectNumberOfRounds);
+    callToAction.textContent = "Choose Your Weapon!";
+    createWeapon(gameArea, 'rock');
+    createWeapon(gameArea, 'paper');
+    createWeapon(gameArea, 'scissors');
+  });
+  gameArea.appendChild(playButton);
+
+
+
   console.log(`Number of rounds chosen: ${rounds}`);
   for (let index = 0; index < rounds; index++) {
     const playerWeapon = getPlayerWeapon();
@@ -96,6 +90,7 @@ function runGame () { // main game script
     } else {
       computerScore++;
     };
+
   console.log(`Your weapon is: ${playerWeapon}`);
   console.log(`The Computer's weapon is: ${computerWeapon}`);
   console.log(`The winner is: ${winner}`);
@@ -111,4 +106,11 @@ function runGame () { // main game script
   }
 };
 
-confirm("Would you like to play a game of Rock Paper Scissors?") ? runGame() : console.log("Game Over"); // run game if user selects OK. else log "Game Over".
+
+// TESTING
+
+
+runGame();
+
+
+// confirm("Would you like to play a game of Rock Paper Scissors?") ? runGame() : console.log("Game Over"); // run game if user selects OK. else log "Game Over".
