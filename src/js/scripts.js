@@ -70,6 +70,7 @@ function runGame () { // main game script
 
   const playButton = document.createElement('button'); // play button -> gets # of rounds, clears area, and initializes game
   playButton.textContent = "Play Game";
+  playButton.classList.add('playButton');
   playButton.addEventListener('click', () => {
     rounds = selectNumberOfRounds.value;
     console.log(rounds);
