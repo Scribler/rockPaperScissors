@@ -48,6 +48,8 @@ function createWeapon (areaToAppendTo, weaponName) {
   console.log(playerWeapon);
   // sets player's weapon type
     // *************** But still needs to trigger comparison to computer weapon ****************
+    // 1) set computer weapon
+    // 2) compare weapons
   });
 }
 
@@ -70,7 +72,7 @@ function runGame () { // main game script
 
   const playButton = document.createElement('button'); // play button -> gets # of rounds, clears area, and initializes game
   playButton.textContent = "Play Game";
-  playButton.classList.add('playButton');
+  playButton.classList.add('playButton'); // add sepparate style with margins to center play button
   playButton.addEventListener('click', () => {
     rounds = selectNumberOfRounds.value;
     console.log(rounds);
