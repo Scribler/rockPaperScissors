@@ -32,15 +32,22 @@ main {
   border-top: 1px solid var(--black);
 }
 
-.gameArea {
-  border: 3px solid black;
+.scoreArea > div {
   display: inline-block;
-  min-height: 700px;
-  min-width: 700px;
-  margin: 10px 0;
+  padding: 10px;
 }
 
-.callToAction {
+
+
+
+
+
+
+
+
+
+
+j.callToAction {
   font-size: 30px;
   margin: 30px;
 }
